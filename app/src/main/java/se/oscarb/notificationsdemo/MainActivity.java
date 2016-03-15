@@ -2,16 +2,29 @@ package se.oscarb.notificationsdemo;
 
 import android.app.NotificationManager;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Instansvariabler
+    View container;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Spara undan vår coordinator layout som allt ligger inuti till senare
+        container = (View) findViewById(R.id.coordinator_layout);
+    }
+
+    // Metod för att visa en Snackbar
+    public void showSnackbar(View view) {
+        // Visa en Snackbar
+        Snackbar.make(container, "Text in snackbar!", Snackbar.LENGTH_LONG).show();
     }
 
     // Metod för att visa en notifiering (notification)
