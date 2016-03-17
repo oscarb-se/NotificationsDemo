@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Spara undan vår coordinator layout som allt ligger inuti till senare
-        container = findViewById(R.id.coordinator_layout);
+        container =     findViewById(R.id.coordinator_layout);
 
         // Visa en Snackbar med hjälp av vår egen metod!
         showSnackbar("Test 1");
