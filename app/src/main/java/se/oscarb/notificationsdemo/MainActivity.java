@@ -18,14 +18,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Spara undan vår coordinator layout som allt ligger inuti till senare
-        container = (View) findViewById(R.id.coordinator_layout);
+        container = findViewById(R.id.coordinator_layout);
+
+        // Visa en Snackbar med hjälp av vår egen metod!
+        showSnackbar("Test 1");
     }
 
-    // Metod för att visa en Snackbar
+    // En metod för att visa en Snackbar som anropas från en onClick (i XML)
     public void showSnackbar(View view) {
+        // Argumentet view är nödvändigt då metoden anropas från onClick i en XML-fil
+        // Även om vi inte använder oss av view
+
         // Visa en Snackbar
-        Snackbar.make(container, "Text in snackbar!", Snackbar.LENGTH_LONG).show();
+        showSnackbar("Default message");
     }
+
+    // En generell metod för att visa en Snackbar
+    public void showSnackbar(String message) {
+        Snackbar.make(container, message, Snackbar.LENGTH_LONG).show();
+    }
+
+
 
     // Metod för att visa en notifiering (notification)
     public void showNotification(View view)  {
